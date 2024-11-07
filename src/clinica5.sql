@@ -15,7 +15,7 @@ select nroa, andar from ambulatorios where nroa not in
 -- Resolva o que se pede utilizando subconsultas SOME e/ou ALL:
 -- 4) CPF dos médicos que atendem em ambulatórios do primeiro andar
 
-select CPF from medicos where nroa = ALL 
+select CPF from medicos where nroa = SOME 
     (select nroa from ambulatorios where andar = 1);
 
 -- 5) nome e CPF de todos os funcionários, exceto o de maior salário

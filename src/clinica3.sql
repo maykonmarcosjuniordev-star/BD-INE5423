@@ -7,9 +7,10 @@ SELECT nome, idade from PACIENTES
 -- 3) Buscar o nome e a idade (em meses) dos pacientes
 SELECT nome, idade * 12 AS idade_meses FROM Pacientes;
 -- 4) Qual o horário da última consulta marcada para o dia 13/10/2020?
-
+SELECT MAX(hora) FROM Consultas
+    WHERE data = '2020/10/13';
 -- 5) Qual a média de idade dos médicos e o total de ambulatórios atendidos por eles?
-SELECT AVG(idade), COUNT(nroa) FROM Medicos;
+SELECT AVG(idade), COUNT(distinct nroa) FROM Medicos;
 -- 6) Buscar o código, o nome e o salário líquido dos funcionários. O salário líquido é o salário cadastrado menos 20%
 SELECT codf, nome, salario * 0.8 AS salario_liquido FROM Funcionarios;
 -- 7) Buscar o nome dos funcionários que terminam com a letra 'a'
